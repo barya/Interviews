@@ -1,0 +1,53 @@
+// Problem Statement: Given two json objects, write a function to compare those objects
+// Assume following two json objects are given i.e.
+
+let obj1 = {
+  "address": {
+    "location": {
+      "lat": 16161.00,
+      "long": "121"
+    },
+    "city": "San Jose",
+    "state": "CA",
+    "street": "Al Camino"
+  }
+}
+
+let obj2 = {
+  "address": {
+    "location": {
+      "lat": 16161.00,
+      "long": "121"
+    },
+    "city": "San Jose",
+    "state": "CA",
+    "street": "Al Camino"
+  }
+}
+
+// Solution Implemented
+
+boolean checkJson(JSONObject obj1, JSONObject obj2){
+  boolean result;
+  JSONObject address1 = obj1.parse("address");
+  JSONObject location1 = address1.parse("location");
+  String lat1 = location1.get("lat").toString();
+  String long1 =  location1.get("long").toString();
+  String city1 = address1.get("city").toString();
+  String state1 = address1.get("state").toString();
+  String street1 = address1.get("street").toString();
+  JSONObject address2 = obj2.parse("address");
+  JSONObject location2 = address2.parse("location");
+  String lat2 = location2.get("lat").toString();
+  String long2 =  location2.get("long").toString();
+  String city2 = address2.get("city").toString();
+  String state2 = address2.get("state").toString();
+  String street2 = address2.get("street").toString()
+  if(lat1.equals(lat2) && long1.equals(long2) && city1.equals(city2) && state1.equals(state2) && street2.equals(street2)) {
+    result = true ;
+  } else {
+  result = false ;
+  }
+  return result ;
+}
+

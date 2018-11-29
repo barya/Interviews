@@ -1,0 +1,16 @@
+// Problem Statement: Implement indexOf method for string i.e. given a string, find out position of another string or character in it.
+
+// Solution Implemented
+
+int indexOf(String test, String a){
+  char[] b = test.split("");
+  int num=0;
+  int result;
+  for(int i=0;i<b.length();i++) {
+    if(b[i].contains(a){
+      result=num;
+    }
+    num++;
+  }
+  return result;
+}
